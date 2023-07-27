@@ -7,4 +7,18 @@ const getCourses = async () => {
 	return courses.json();
 };
 
-exports.getCourses = getCourses;
+const getActiveCourses = async () => {
+	const courses = await getCourses();
+	const activeCourses = [...courses].filter((course) => {
+		if (!course.access_restricted_by_date) {
+			const endDate = new Date(course.end_at);
+			const today = new Date();
+			return endDate > today;
+		} else {
+			return false;
+		}
+	});
+	return activeCourses;
+};
+
+exports.getCourses = getActiveCourses;

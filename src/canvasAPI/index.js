@@ -6,3 +6,5 @@ exports.getCourses = getCourses.getCourses;
 exports.getCourseByID = getCourseByID.getCourseByID;
 exports.getAssignmentsByCourseID =
 	getAssignmentsByCourseID.getAssignmentsByCourseID;
+exports.getAssignmentsByCourseIDGraphQL =
+	getAssignmentsByCourseID.getAssignmentsByCourseIDGraphQL;
